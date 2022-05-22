@@ -1,2 +1,2 @@
 <?
-echo 'site.loc ðàáîòàåò!';
+echo 'site.loc Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚!';
