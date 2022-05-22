@@ -1,0 +1,4 @@
+172.21.0.1 - - [05/Sep/2019:08:55:44 +0000] "GET / HTTP/1.1" 200 238 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
+172.21.0.1 - - [05/Sep/2019:08:55:45 +0000] "GET /favicon.ico HTTP/1.1" 404 500 "http://site1.loc/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
+172.21.0.1 - - [05/Sep/2019:09:22:10 +0000] "GET / HTTP/1.1" 200 238 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
+172.21.0.1 - - [05/Sep/2019:11:55:33 +0000] "GET / HTTP/1.1" 200 238 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
