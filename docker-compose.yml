@@ -2,16 +2,16 @@ version: '3'
 
 services:
 
-  web:
-    build: ./web
+  php:
+    build: ./php
     volumes:
       - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
     ports:
       - ${APP_IPPORT_HOST}:${APP_PORT_CONTAINER}
     working_dir: ${APP_PATH_CONTAINER}
 
-  db:
-    build: ./db
+  mysql:
+    build: ./mysql
     #для версии 8.0 и выше добавляем директиву:
     #command: --default-authentication-plugin=mysql_native_password
     restart: always
