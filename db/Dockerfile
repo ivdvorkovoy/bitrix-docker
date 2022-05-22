@@ -4,4 +4,4 @@ RUN apt-get update && apt-get install -y \
     mc
 
 #добавление директив mysqld
-COPY bitrix.cnf /etc/mysql/mysql.conf.d/
+COPY db.cnf /etc/mysql/mysql.conf.d/

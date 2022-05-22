@@ -21,12 +21,15 @@ RUN apt-get update && apt-get install -y \
 && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
 && docker-php-ext-install -j$(nproc) gd
 
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
 #копирование скрипта-заглушки для обработки функции php mail
 RUN mkdir /var/www/system_dir
 COPY mail.php /var/www/system_dir
 
 #добавление директив php.ini
-COPY bitrix.ini /usr/local/etc/php/conf.d/
+ADD ./php.ini /usr/local/etc/php/conf.d/php.ini
 
 #создание виртуальных хостов
 COPY sites.conf /etc/apache2/sites-available/000-default.conf
