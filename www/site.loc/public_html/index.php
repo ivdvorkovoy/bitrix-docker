@@ -1,2 +1,2 @@
 <?
-echo 'site1.loc';
+echo 'site.loc работает!';
