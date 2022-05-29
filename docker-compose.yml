@@ -8,6 +8,8 @@ services:
       - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
     ports:
       - ${APP_IPPORT_HOST}:${APP_PORT_CONTAINER}
+      #Если нужно прокинуть сайт в интернет, расскоментируй эту строку укажи верный IP-адрес в .env
+      #- ${APP_IPPORT_HOST_WEB}:${APP_PORT_CONTAINER}
     working_dir: ${APP_PATH_CONTAINER}
 
   mysql:
