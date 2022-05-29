@@ -25,3 +25,15 @@ services:
     restart: always
     ports:
       - ${APP_IPPORT_ADMINER_HOST}:${APP_PORT_ADMINER_CONTAINER}
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - ${APP_IPPORT_PHPMYADMIN_HOST}:${APP_PORT_PHPMYADMIN_CONTAINER}
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=${MYSQL_ROOT_PASSWORD}
+      - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
