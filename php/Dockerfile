@@ -21,7 +21,14 @@ RUN apt-get update && apt-get install -y \
 && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
 && docker-php-ext-install -j$(nproc) gd
 
+#добавление отладчика
 RUN pecl install xdebug && docker-php-ext-enable xdebug
+
+#установка необходимых локалей
+RUN apt-get install -y locales locales-all
+RUN localedef -i en_US -f UTF-8 en_US.UTF-8; \
+      localedef -i ru_RU -f UTF-8 ru_RU.UTF-8; \
+      localedef -i ru_RU -f CP1251 ru_RU.CP1251
 
 #копирование скрипта-заглушки для обработки функции php mail
 RUN mkdir /var/www/system_dir
