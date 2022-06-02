@@ -11,18 +11,21 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libonig-dev \
     libpq-dev \
-&& docker-php-ext-install \
+    libz-dev \
+    libzip-dev \
+    && docker-php-ext-install \
     pdo_mysql \
     mysqli \
     mbstring \
     json \
     xml \
+    zip \
     opcache \
 && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
 && docker-php-ext-install -j$(nproc) gd
 
 #добавление отладчика
-RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN pecl install zlib zip xdebug && docker-php-ext-enable xdebug
 
 #установка необходимых локалей
 RUN apt-get install -y locales locales-all
